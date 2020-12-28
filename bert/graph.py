@@ -15,7 +15,8 @@ def import_tf(device_id=-1, verbose=False):
     #os.environ['CUDA_VISIBLE_DEVICES'] = '-1' if device_id < 0 else str(device_id)
     os.environ['TF_CPP_MIN_LOG_LEVEL'] = '0' if verbose else '3'
     import tensorflow as tf
-    tf.logging.set_verbosity(tf.logging.DEBUG if verbose else tf.logging.ERROR)
+    #tf.logging.set_verbosity(tf.logging.DEBUG if verbose else tf.logging.ERROR)
+    tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.DEBUG if verbose else tf.compat.v1.logging.ERROR)
     return tf
 
 
